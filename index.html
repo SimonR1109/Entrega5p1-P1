@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<meta charset="utf-8">
+	<title>Entrega 5</title>
+	<script type="text/javascript">
+		x=0;
+		y=10;
+	</script>
+</head>
+<body onload="segundos()">
+	<img src="fondo.jpg" class="fondo">
+	<script type="text/javascript">
+		function inicio() 
+		{
+			x=x+1;
+			if (x==5) 
+			{
+				clearInterval(contar);
+				document.getElementById("contenido").innerHTML = y;
+				setInterval(retroceder,1000);
+			}
+		}
+		function segundos()
+		{
+			contar=setInterval(inicio,1000);
+		}
+
+		function retroceder()
+		{
+			y=y-1;
+			if (y>=0) 
+			{
+
+				document.getElementById("contenido").innerHTML = y;
+				control2=setInterval(tercero,1000);
+			}
+			else
+			{
+				control1=setInterval(cuarto,400);
+			}
+		}
+
+		function tercero()
+		{
+			control=setInterval(retroceder,10000);
+		}
+
+		function cuarto()
+		{
+			document.getElementById("contenido").innerHTML = "Terminó";
+
+		}
+	</script>
+	<div class="divtitulo"></div>
+	<img src="titulo.png" class="titulo">
+	<img src="linea1.png" class="linea1">
+    <img src="linea2.png" class="linea2">
+    <a href="https://simonr1109.github.io/Periodo1/">
+      <img src="regresar.png" class="regresar">
+    </a>
+
+	<div id="contenido" class="contenido">Hola</div>
+	<div class="div1" id="div1">
+	</div>
+</body>
+</html>
